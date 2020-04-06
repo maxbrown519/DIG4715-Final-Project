@@ -46,8 +46,10 @@ public class PlayerControllerScript : MonoBehaviour
         }
         if (isGrounded == true)
         {
+            AirDashed = false;
             DJumped = false;
             velocity.z = 0;
+            velocity.x = 0;
         }
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)
@@ -61,20 +63,23 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded == false && DJumped == false)
         {
             DJumped = true;
-            velocity.y = Mathf.Sqrt(JHeight * -2f * grav);
+            velocity = transform.up * Mathf.Sqrt(JHeight * -2f * grav);
         }
         if (Input.GetButtonDown("A button") && isGrounded == false && DJumped == false)
         {
             DJumped = true;
-            velocity.y = Mathf.Sqrt(JHeight * -2f * grav);
+            velocity = transform.up * Mathf.Sqrt(JHeight * -2f * grav);
         }
         if (Input.GetButtonDown("Submit") && isGrounded == false)
         {
-            velocity.z = Mathf.Sqrt(dashDistance);
+            velocity = transform.forward * Mathf.Sqrt(dashDistance);
+            AirDashed = true;
+            //transform.Translate(transform.forward * Mathf.Sqrt(dashDistance));
         }
         if (Input.GetButtonDown("B button") && isGrounded == false)
         {
             velocity.z = Mathf.Sqrt(dashDistance);
+            AirDashed = true;
         }
 
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("right Trigger"))

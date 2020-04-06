@@ -2609,6 +2609,21 @@ PrefabInstance:
       propertyPath: speed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1200462341379822117, guid: 1c25757d2cabb724fb47fa6972e4d71b,
+        type: 3}
+      propertyPath: jumpHeight
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200462341379822117, guid: 1c25757d2cabb724fb47fa6972e4d71b,
+        type: 3}
+      propertyPath: dashDistance
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 1200462341379822117, guid: 1c25757d2cabb724fb47fa6972e4d71b,
+        type: 3}
+      propertyPath: JHeight
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7633072578501863582, guid: 1c25757d2cabb724fb47fa6972e4d71b,
         type: 3}
       propertyPath: m_Constraints

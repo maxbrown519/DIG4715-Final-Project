@@ -21,6 +21,7 @@ public class projectileScript : MonoBehaviour
         Destroy(this.gameObject);
         if (other.gameObject.tag == "hostile")
         {
+            Destroy(this.gameObject);
             Destroy(other.gameObject);
         }
     }

@@ -24,4 +24,12 @@ public class TargetScript : MonoBehaviour
             isLocked = false;
         }
     }
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.tag == "projectile")
+        {
+            Destroy(other.gameObject);
+            isLocked = false;
+        }
+    }
 }
