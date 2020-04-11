@@ -10,6 +10,7 @@ TagManager:
   - D2
   - D3
   - D4
+  - ground
   layers:
   - Default
   - TransparentFX

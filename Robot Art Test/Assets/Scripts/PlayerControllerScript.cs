@@ -51,6 +51,7 @@ public class PlayerControllerScript : MonoBehaviour
             velocity.z = 0;
             velocity.x = 0;
         }
+       
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
@@ -113,6 +114,13 @@ public class PlayerControllerScript : MonoBehaviour
         {
             //load end screen
         }
+    }
+    void OnCollisionEnter(Collision Other)
+    {
+     if(Other.gameObject.tag == "ground")
+     {
+      isGrounded = true;
+     }
     }
 }
 
