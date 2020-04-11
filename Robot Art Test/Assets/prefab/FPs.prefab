@@ -85,14 +85,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   grav: -9.81
-  JHeight: 3
-  dashDistance: 3
+  JHeight: 8
+  dashDistance: 300
   controller: {fileID: 558269566850687642}
   GCheck: {fileID: 1297152321668764157}
   groundDistance: 0.4
   groundMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   isGrounded: 0
   jumpHeight: 0
   DJumped: 0
@@ -103,6 +103,7 @@ MonoBehaviour:
   SpawnLocation: {fileID: 1994275952014311925}
   Range: 350
   hinge: {fileID: 0}
+  HP: 5
 --- !u!65 &8447200659720464857
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -347,7 +348,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5076577880100445591}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.0499988, z: 2.46}
+  m_LocalPosition: {x: 1.35, y: 1.2, z: 2.46}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 558269566850687845}
