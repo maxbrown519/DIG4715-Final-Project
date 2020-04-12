@@ -94,10 +94,10 @@ public class PlayerControllerScript : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire2") || Input.GetButtonDown("left Trigger"))
         {
-            Rigidbody weaponInstance;
-            weaponInstance = Instantiate(grappleingHook, SpawnLocation.position, Quaternion.LookRotation(transform.forward)) as Rigidbody;
-            //weaponInstance.AddForce(SpawnLocation.forward * Range);
-            //StartCoroutine(hookUsed());
+            mousePos = Input.mousePosition;
+            Rigidbody GHookInstance;
+            GHookInstance = Instantiate(grappleingHook, SpawnLocation.position, SpawnLocation.rotation);
+            GHookInstance.AddForce(SpawnLocation.forward * Range);
         }
 
 

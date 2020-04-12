@@ -11,6 +11,8 @@ TagManager:
   - D3
   - D4
   - ground
+  - GRAPPLING_NODE_TAG
+  - Point
   layers:
   - Default
   - TransparentFX
