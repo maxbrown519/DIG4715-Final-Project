@@ -16,7 +16,7 @@ public class teleproter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Destroy(this.gameObject, 4);
+        Destroy(this.gameObject, 6);
     }
 
     private void OnCollisionEnter(Collision other)
