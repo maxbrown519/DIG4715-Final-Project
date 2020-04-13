@@ -24,7 +24,7 @@ public class PlayerControllerScript : MonoBehaviour
     public float Range;
     public HingeJoint hinge;
     static Vector3 mousePos;
-    public float HP = 5;
+    [SerializeField] public float HP = 5;
 
     void Start()
     {
