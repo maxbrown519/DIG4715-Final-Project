@@ -43,6 +43,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetButton("Cancel") || Input.GetButton("Back"))
         {
             Application.Quit();
+            Debug.Log("QUIT");
         }
         isGrounded = Physics.CheckSphere(GCheck.position, groundDistance, groundMask);
 
@@ -98,6 +99,7 @@ public class PlayerControllerScript : MonoBehaviour
             AirDashed = true;
         }
 
+
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("right Trigger"))
         {
             mousePos = Input.mousePosition;
@@ -114,6 +116,9 @@ public class PlayerControllerScript : MonoBehaviour
             Rigidbody GHookInstance;
             GHookInstance = Instantiate(grappleingHook, SpawnLocation.position, SpawnLocation.rotation);
             GHookInstance.AddForce(SpawnLocation.forward * Range);
+
+            sfx.clip = shoot; //sfx for projectile
+            sfx.Play();
         }
 
 
