@@ -6,6 +6,7 @@ public class LockedDoorScript : MonoBehaviour
 {
     public GameObject lockTarget;
     public bool isOpened = false;
+    public float speed;
     public float killTime;
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class LockedDoorScript : MonoBehaviour
     {
         if (lockTarget.GetComponent<TargetScript>().isLocked == false)
         {
-            transform.Translate(Vector3.right * Time.deltaTime);
+            transform.Translate(Vector3.right* speed * Time.deltaTime);
             Destroy(this.gameObject, killTime);
         }
     }

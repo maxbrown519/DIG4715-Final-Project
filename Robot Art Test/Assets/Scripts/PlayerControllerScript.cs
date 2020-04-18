@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerControllerScript : MonoBehaviour
 {
@@ -24,7 +25,12 @@ public class PlayerControllerScript : MonoBehaviour
     public float Range;
     public HingeJoint hinge;
     static Vector3 mousePos;
-    public float HP = 5;
+    [SerializeField] public float HP = 5;
+
+    public AudioSource sfx;
+    public AudioClip jump;
+    public AudioClip shoot;
+    public AudioClip dash;
 
     public Animator anim;
 
@@ -48,13 +54,19 @@ public class PlayerControllerScript : MonoBehaviour
         }
         if (isGrounded == true)
         {
+            AirDashed = false;
             DJumped = false;
             velocity.z = 0;
+            velocity.x = 0;
         }
+       
 
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             velocity.y = Mathf.Sqrt(JHeight * -2f * grav);
+
+            sfx.clip = jump; //sfx for jump
+            sfx.Play();
         }
         if (Input.GetButtonDown("A button") && isGrounded == true)
         {
@@ -63,20 +75,29 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded == false && DJumped == false)
         {
             DJumped = true;
-            velocity.y = Mathf.Sqrt(JHeight * -2f * grav);
+            velocity = transform.up * Mathf.Sqrt(JHeight * -2f * grav);
+
+            sfx.clip = jump; //sfx for double jump
+            sfx.Play();
         }
         if (Input.GetButtonDown("A button") && isGrounded == false && DJumped == false)
         {
             DJumped = true;
-            velocity.y = Mathf.Sqrt(JHeight * -2f * grav);
+            velocity = transform.up * Mathf.Sqrt(JHeight * -2f * grav);
         }
         if (Input.GetButtonDown("Submit") && isGrounded == false)
         {
-            velocity.z = Mathf.Sqrt(dashDistance);
+            velocity = transform.forward * Mathf.Sqrt(dashDistance);
+            AirDashed = true;
+            //transform.Translate(transform.forward * Mathf.Sqrt(dashDistance));
+
+            sfx.clip = dash; //dash sfx
+            sfx.Play();
         }
         if (Input.GetButtonDown("B button") && isGrounded == false)
         {
             velocity.z = Mathf.Sqrt(dashDistance);
+            AirDashed = true;
         }
 
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("right Trigger"))
@@ -86,14 +107,15 @@ public class PlayerControllerScript : MonoBehaviour
             GHookInstance = Instantiate(projectile, SpawnLocation.position, SpawnLocation.rotation);
             GHookInstance.AddForce(SpawnLocation.forward * Range);
 
-
+            sfx.clip = shoot; //sfx for projectile
+            sfx.Play();
         }
         if (Input.GetButtonDown("Fire2") || Input.GetButtonDown("left Trigger"))
         {
-            Rigidbody weaponInstance;
-            weaponInstance = Instantiate(grappleingHook, SpawnLocation.position, Quaternion.LookRotation(transform.forward)) as Rigidbody;
-            //weaponInstance.AddForce(SpawnLocation.forward * Range);
-            //StartCoroutine(hookUsed());
+            mousePos = Input.mousePosition;
+            Rigidbody GHookInstance;
+            GHookInstance = Instantiate(grappleingHook, SpawnLocation.position, SpawnLocation.rotation);
+            GHookInstance.AddForce(SpawnLocation.forward * Range);
         }
 
 
@@ -108,31 +130,73 @@ public class PlayerControllerScript : MonoBehaviour
 
         if (HP <= 0)
         {
-            //load end screen
+            SceneManager.LoadScene("Lose Screen"); //load end screen
         }
 
         //animation movement
         if (Input.GetKey(KeyCode.W))
         {
-            anim.SetInteger("condition", 1);
+            if (anim.GetBool("dashing") == true)
+            {
+                return;
+            }
+            else if (anim.GetBool("dashing") == false)
+            {
+                anim.SetBool("idle", false);
+                anim.SetBool("walking", true);
+                anim.SetInteger("condition", 1);
+            }
+
         }
         else
         {
+            anim.SetBool("idle", true);
+            anim.SetBool("walking", false);
             anim.SetInteger("condition", 0);
         }
         GetInput();
-
+    }
+    void OnCollisionEnter(Collision Other)
+    {
+     if(Other.gameObject.tag == "ground")
+     {
+      isGrounded = true;
+     }
     }
 
+    //dash animation plays in the air
     void GetInput()
     {
         if (isGrounded == false)
         {
-            if (Input.GetKey(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return))
             {
-                anim.SetInteger("condition", 2);
+                if (anim.GetBool("walking") == true)
+                {
+                    anim.SetBool("walking", false);
+                    anim.SetInteger("condition", 0);
+                }
+                if (anim.GetBool("walking") == false)
+                {
+                    Dashing();
+                }
             }
         }
+    }
+
+    //plays dash when wlaking anim is on
+    void Dashing()
+    {
+        StartCoroutine(DashingRoutine());
+    }
+
+    IEnumerator DashingRoutine()
+    {
+        anim.SetBool("dashing", true);
+        anim.SetInteger("condition", 2);
+        yield return new WaitForSeconds(1);
+        anim.SetInteger("condition", 0);
+        anim.SetBool("dashing", false);
     }
 
 }

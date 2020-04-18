@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class ShootingHostileScript : MonoBehaviour
 {
-    //   //sets points for the dog to walk to
+    //   //sets points to walk to
     public Transform target;
     public Transform target2;
     public Transform target3;
@@ -34,9 +34,8 @@ public class ShootingHostileScript : MonoBehaviour
     public Transform Player;
     public float MaxAngle;
     public float MaxRadius;
-    //bool IsInFov = false;
+    bool IsInFov = false;
 
-    public bool fear;
     NavMeshAgent agent;
     // Start is called before the first frame update
     void Start()
@@ -49,11 +48,11 @@ public class ShootingHostileScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //PlayerSpoted = IsInFov;
+        PlayerSpoted = IsInFov;
 
         if (PlayerSpoted == true)
         {
-            player = GameObject.Find("player_stand_in");
+            player = GameObject.FindGameObjectWithTag("Player");
             PlayerTarget = player.transform;
             Vector3 lookVector = player.transform.position - transform.position;
             //lookVector.y = Player.transform.position.y;
@@ -93,8 +92,7 @@ public class ShootingHostileScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //load gameover screen
-            //Play dog sound here
+
         }
         if (other.gameObject.tag == "D1")
         {
