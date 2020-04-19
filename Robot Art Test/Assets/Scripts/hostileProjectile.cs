@@ -19,7 +19,7 @@ public class hostileProjectile : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            other.gameObject.GetComponent<PlayerControllerScript>().HP -= 1;
+            other.gameObject.GetComponent<PlayerControllerScript>().health -= 1;
             Destroy(this.gameObject);
 
         }
