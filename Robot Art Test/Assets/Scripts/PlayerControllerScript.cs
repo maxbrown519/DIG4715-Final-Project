@@ -25,7 +25,7 @@ public class PlayerControllerScript : MonoBehaviour
     public float Range;
     public HingeJoint hinge;
     static Vector3 mousePos;
-    [SerializeField] public float HP = 5;
+    
 
     public AudioSource sfx;
     public AudioClip jump;
@@ -33,10 +33,12 @@ public class PlayerControllerScript : MonoBehaviour
     public AudioClip dash;
 
     public Animator anim;
+    [SerializeField] public int health;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        health = 5;
     }
 
     // Update is called once per frame
@@ -128,7 +130,7 @@ public class PlayerControllerScript : MonoBehaviour
         velocity.y += grav * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
 
-        if (HP <= 0)
+        if (health <= 0)
         {
             SceneManager.LoadScene("Lose Screen"); //load end screen
         }
