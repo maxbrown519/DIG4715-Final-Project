@@ -40,6 +40,7 @@ public class PlayerControllerScript : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         health = 5;
+        healthBar.SetMaxHealth(health);
     }
 
     // Update is called once per frame
@@ -158,6 +159,8 @@ public class PlayerControllerScript : MonoBehaviour
             anim.SetInteger("condition", 0);
         }
         GetInput();
+        //hp bar
+        healthBar.SetHealth(health);
     }
     void OnCollisionEnter(Collision Other)
     {
