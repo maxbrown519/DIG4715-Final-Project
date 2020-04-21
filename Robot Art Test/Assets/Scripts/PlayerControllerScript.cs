@@ -22,7 +22,7 @@ public class PlayerControllerScript : MonoBehaviour
     public Rigidbody projectile;
     public Rigidbody grappleingHook;
     public Transform SpawnLocation;
-    public float Range;
+    public float ProjectileSpeed;
     public HingeJoint hinge;
     static Vector3 mousePos;
 
@@ -79,7 +79,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded == false && DJumped == false)
         {
             DJumped = true;
-            velocity = transform.up * Mathf.Sqrt(JHeight * -2f * grav);
+            velocity = transform.up * Mathf.Sqrt(JHeight * -4f * grav);
 
             sfx.clip = jump; //sfx for double jump
             sfx.Play();
@@ -87,7 +87,7 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetButtonDown("A button") && isGrounded == false && DJumped == false)
         {
             DJumped = true;
-            velocity = transform.up * Mathf.Sqrt(JHeight * -2f * grav);
+            velocity = transform.up * Mathf.Sqrt(JHeight * -4f * grav);
         }
         if (Input.GetButtonDown("Submit") && isGrounded == false)
         {
@@ -109,7 +109,7 @@ public class PlayerControllerScript : MonoBehaviour
             mousePos = Input.mousePosition;
             Rigidbody GHookInstance;
             GHookInstance = Instantiate(projectile, SpawnLocation.position, SpawnLocation.rotation);
-            GHookInstance.AddForce(SpawnLocation.forward * Range);
+            GHookInstance.AddForce(SpawnLocation.forward * ProjectileSpeed);
 
             sfx.clip = shoot; //sfx for projectile
             sfx.Play();
@@ -119,7 +119,7 @@ public class PlayerControllerScript : MonoBehaviour
             mousePos = Input.mousePosition;
             Rigidbody GHookInstance;
             GHookInstance = Instantiate(grappleingHook, SpawnLocation.position, SpawnLocation.rotation);
-            GHookInstance.AddForce(SpawnLocation.forward * Range);
+            GHookInstance.AddForce(SpawnLocation.forward * ProjectileSpeed);
         }
 
 
