@@ -4,23 +4,24 @@ using UnityEngine;
 
 public class compactorWall : MonoBehaviour
 {
+    public float speed;
+    public bool rightWall;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
+    // Update is called once per frame
     void Update()
     {
-
-    }
-
-    private void OnCollisionEnter(Collision other)
-    {
-        if (other.gameObject.tag == "Player")
+        if (rightWall == false)
         {
-            other.gameObject.GetComponent<PlayerControllerScript>().health -= 1;
-
+            transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        }
+        if (rightWall == true)
+        {
+            transform.Translate(Vector3.forward * -speed * Time.deltaTime);
         }
     }
 }
