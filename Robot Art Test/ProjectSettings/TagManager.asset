@@ -14,6 +14,9 @@ TagManager:
   - GRAPPLING_NODE_TAG
   - Point
   - CWall
+  - compactorL
+  - compactorR
+  - roof
   layers:
   - Default
   - TransparentFX

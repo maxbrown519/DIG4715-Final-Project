@@ -35,6 +35,10 @@ public class PlayerControllerScript : MonoBehaviour
     public Animator anim;
     [SerializeField] public int health;
     public healthbar healthBar;
+    //compactor walls
+    public bool comL = false;
+    public bool comR = false;
+    public bool crushed = false;
 
     void Start()
     {
@@ -159,6 +163,10 @@ public class PlayerControllerScript : MonoBehaviour
             anim.SetInteger("condition", 0);
         }
         GetInput();
+        if(comR && comL == true)
+        {
+            health = 0;
+        }
         //hp bar
         healthBar.SetHealth(health);
     }
@@ -168,7 +176,31 @@ public class PlayerControllerScript : MonoBehaviour
         {
             isGrounded = true;
         }
+        if (Other.gameObject.tag == "compactorL")
+        {
+            comL = true;
+        }
+        if (Other.gameObject.tag == "compactorR")
+        {
+            comR = true;
+        }
+        if(Other.gameObject.tag == "roof")
+        {
+            health = 0;
+        }
     }
+    private void OnCollisionExit(Collision Other)
+    {
+        if (Other.gameObject.tag == "compactorL")
+        {
+            comL = false;
+        }
+        if (Other.gameObject.tag == "compactorR")
+        {
+            comR = false;
+        }
+    }
+
 
     //dash animation plays in the air
     void GetInput()

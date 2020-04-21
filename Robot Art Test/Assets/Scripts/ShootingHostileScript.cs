@@ -94,6 +94,38 @@ public class ShootingHostileScript : MonoBehaviour
         {
 
         }
+        /*if (other.gameObject.tag == "D1")
+        {
+            T1 = true;
+        }
+        if (other.gameObject.tag == "D2")
+        {
+            T2 = true;
+        }
+        if (other.gameObject.tag == "D3")
+        {
+            T3 = true;
+        }
+        if (other.gameObject.tag == "D4")
+        {
+            T1 = false;
+            T2 = false;
+            T3 = false;
+            T4 = false;
+            T4 = false;
+        }*/
+
+
+    }
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject == player)
+        {
+            PlayerSpoted = true;
+        }
         if (other.gameObject.tag == "D1")
         {
             T1 = true;
@@ -113,18 +145,6 @@ public class ShootingHostileScript : MonoBehaviour
             T3 = false;
             T4 = false;
             T4 = false;
-        }
-
-
-    }
-
-
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject == player)
-        {
-            PlayerSpoted = true;
         }
 
     }
