@@ -1123,7 +1123,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1270574701}
+      - m_Target: {fileID: 754551682}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -2903,7 +2903,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1270574701}
+      - m_Target: {fileID: 754551682}
         m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
@@ -3637,8 +3637,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: To move, use the WASD keys. To rotate the camera, move the mouse. To fire
     projectiles, click the left mouse button. To perform an air dash, press the enter
-    key. To use the glappling arm, click the right mouse button. To jump, press the
-    space key and press it again to perform a double jump.
+    key. To use the teleporter, click the right mouse button. To jump, press the space
+    key and press it again to perform a double jump.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
