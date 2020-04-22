@@ -94,7 +94,7 @@ public class ShootingHostileScript : MonoBehaviour
         {
 
         }
-        /*if (other.gameObject.tag == "D1")
+        if (other.gameObject.tag == "D1")
         {
             T1 = true;
         }
@@ -113,14 +113,14 @@ public class ShootingHostileScript : MonoBehaviour
             T3 = false;
             T4 = false;
             T4 = false;
-        }*/
+        }
 
 
     }
 
 
 
-    private void OnTriggerEnter(Collider other)
+    /*private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
         {
@@ -147,7 +147,7 @@ public class ShootingHostileScript : MonoBehaviour
             T4 = false;
         }
 
-    }
+    }*/
 
     private void OnTriggerExit(Collider other)
     {
