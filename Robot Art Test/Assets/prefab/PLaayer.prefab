@@ -124,14 +124,18 @@ MonoBehaviour:
   grappleingHook: {fileID: 2288105194802711072, guid: 38a760a2c2f196c4f9200153601ab455,
     type: 3}
   SpawnLocation: {fileID: 2300445657226772356}
-  Range: 1200
+  ProjectileSpeed: 0
   hinge: {fileID: 0}
-  HP: 5
   sfx: {fileID: 287838383365079017}
   jump: {fileID: 8300000, guid: 926062595653446d8bc72593085a16d5, type: 3}
   shoot: {fileID: 8300000, guid: 49e5eb998e7404f9aa428c32833486f8, type: 3}
   dash: {fileID: 8300000, guid: 5ca24a994ba5f4c77af1bb5649cdb3af, type: 3}
   anim: {fileID: 0}
+  health: 0
+  healthBar: {fileID: 0}
+  comL: 0
+  comR: 0
+  crushed: 0
 --- !u!65 &8177332357765322664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -656,6 +660,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 83cad0adcdd6a4dd7b79e451627708ba,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 83cad0adcdd6a4dd7b79e451627708ba,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: 83cad0adcdd6a4dd7b79e451627708ba,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -3537707176338853411, guid: 83cad0adcdd6a4dd7b79e451627708ba,
         type: 3}

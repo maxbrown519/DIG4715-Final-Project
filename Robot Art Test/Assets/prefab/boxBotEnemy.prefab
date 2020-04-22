@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2984216203873503594}
   m_Layer: 0
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: hostile
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -272,7 +272,7 @@ MonoBehaviour:
   moved: 0
   fellback: 0
   playerseen: 0
-  Player: {fileID: 0}
+  Player: {fileID: 287838383126240489, guid: 9345967950a1a4f26b4a5987a2893ccd, type: 3}
 --- !u!195 &2984216203845535119
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -34,7 +34,7 @@ public class ShootingHostileScript : MonoBehaviour
     public Transform Player;
     public float MaxAngle;
     public float MaxRadius;
-    bool IsInFov = false;
+    //bool IsInFov = false;
 
     NavMeshAgent agent;
     // Start is called before the first frame update
@@ -42,20 +42,21 @@ public class ShootingHostileScript : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anima = gameObject.GetComponent<Animator>();
+        player = GameObject.Find("PLaayer");
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        PlayerSpoted = IsInFov;
+        //PlayerSpoted = IsInFov;
 
         if (PlayerSpoted == true)
         {
-            player = GameObject.FindGameObjectWithTag("Player");
+            player = GameObject.Find("PLaayer");
             PlayerTarget = player.transform;
             Vector3 lookVector = player.transform.position - transform.position;
-            //lookVector.y = Player.transform.position.y;
+            lookVector.y = transform.position.y - Player.transform.position.y ;
             Quaternion rot = Quaternion.LookRotation(lookVector);
             transform.rotation = Quaternion.Slerp(transform.rotation, rot, 1);
             // agent.SetDestination(PlayerTarget.position);
@@ -90,10 +91,11 @@ public class ShootingHostileScript : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.gameObject.tag == "Player")
+        /*if (other.gameObject.tag == "Player")
         {
+            PlayerSpoted = true;
 
-        }
+        }*/
         if (other.gameObject.tag == "D1")
         {
             T1 = true;
@@ -120,34 +122,14 @@ public class ShootingHostileScript : MonoBehaviour
 
 
 
-    /*private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
         {
             PlayerSpoted = true;
         }
-        if (other.gameObject.tag == "D1")
-        {
-            T1 = true;
-        }
-        if (other.gameObject.tag == "D2")
-        {
-            T2 = true;
-        }
-        if (other.gameObject.tag == "D3")
-        {
-            T3 = true;
-        }
-        if (other.gameObject.tag == "D4")
-        {
-            T1 = false;
-            T2 = false;
-            T3 = false;
-            T4 = false;
-            T4 = false;
-        }
 
-    }*/
+    }
 
     private void OnTriggerExit(Collider other)
     {
