@@ -40,6 +40,9 @@ public class PlayerControllerScript : MonoBehaviour
     public bool comR = false;
     public bool crushed = false;
 
+    public Transform BackToHub;
+    public GameObject ThePlayer;
+
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -179,6 +182,13 @@ public class PlayerControllerScript : MonoBehaviour
         }
         //hp bar
         healthBar.SetHealth(health);
+
+
+        if (Input.GetKey(KeyCode.R)) //teleport player back to hub
+        {
+            ThePlayer.transform.position = BackToHub.transform.position;
+        }
+
     }
     void OnCollisionEnter(Collision Other)
     {
