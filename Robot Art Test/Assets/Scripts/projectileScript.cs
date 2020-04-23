@@ -19,6 +19,10 @@ public class projectileScript : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         Destroy(this.gameObject);
+        if (other.gameObject.tag == "Boss")
+        {
+            other.gameObject.GetComponent<BossScript>().HP -= 1;
+        }
         if (other.gameObject.tag == "hostile")
         {
             Destroy(this.gameObject);

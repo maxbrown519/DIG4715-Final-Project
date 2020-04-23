@@ -17,6 +17,7 @@ TagManager:
   - compactorL
   - compactorR
   - roof
+  - Boss
   layers:
   - Default
   - TransparentFX

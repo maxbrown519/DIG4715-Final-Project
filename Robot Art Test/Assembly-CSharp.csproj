@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BlockingHostile.cs" />
+    <Compile Include="Assets\Scripts\BossScript.cs" />
     <Compile Include="Assets\Scripts\compactorWall.cs" />
     <Compile Include="Assets\Scripts\EndScreen.cs" />
     <Compile Include="Assets\Scripts\healthbar.cs" />
