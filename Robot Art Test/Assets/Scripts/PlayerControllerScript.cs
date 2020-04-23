@@ -79,6 +79,9 @@ public class PlayerControllerScript : MonoBehaviour
         if (Input.GetButtonDown("A button") && isGrounded == true)
         {
             velocity.y = Mathf.Sqrt(JHeight * -2f * grav);
+
+            sfx.clip = jump; //sfx for jump
+            sfx.Play();
         }
         if (Input.GetButtonDown("Jump") && isGrounded == false && DJumped == false)
         {
@@ -92,6 +95,9 @@ public class PlayerControllerScript : MonoBehaviour
         {
             DJumped = true;
             velocity = transform.up * Mathf.Sqrt(JHeight * -4f * grav);
+
+            sfx.clip = jump; //sfx for double jump
+            sfx.Play();
         }
         if (Input.GetButtonDown("Submit") && isGrounded == false)
         {
@@ -104,8 +110,12 @@ public class PlayerControllerScript : MonoBehaviour
         }
         if (Input.GetButtonDown("B button") && isGrounded == false)
         {
-            velocity.z = Mathf.Sqrt(dashDistance);
+            velocity = transform.forward * Mathf.Sqrt(dashDistance);
             AirDashed = true;
+            //transform.Translate(transform.forward * Mathf.Sqrt(dashDistance));
+
+            sfx.clip = dash; //dash sfx
+            sfx.Play();
         }
 
         if (Input.GetButtonDown("Fire1") || Input.GetButtonDown("right Trigger"))
