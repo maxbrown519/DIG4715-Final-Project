@@ -42,7 +42,7 @@ public class ShootingHostileScript : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         anima = gameObject.GetComponent<Animator>();
-        player = GameObject.Find("PLaayer");
+        player = GameObject.Find("Player Character");
     }
 
 
@@ -53,7 +53,7 @@ public class ShootingHostileScript : MonoBehaviour
 
         if (PlayerSpoted == true)
         {
-            player = GameObject.Find("PLaayer");
+            player = GameObject.Find("Player Character");
             PlayerTarget = player.transform;
             Vector3 lookVector = player.transform.position - transform.position;
             lookVector.y = transform.position.y - Player.transform.position.y ;

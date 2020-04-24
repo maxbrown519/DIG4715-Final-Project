@@ -18,6 +18,14 @@ TagManager:
   - compactorR
   - roof
   - Boss
+  - compactor activeator
+  - teleportingLevel
+  - comLevel
+  - shootingLevel
+  - telEnd
+  - comEnd
+  - ShootEnd
+  - Boss Door
   layers:
   - Default
   - TransparentFX

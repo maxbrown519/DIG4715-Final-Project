@@ -227,7 +227,7 @@ public class PlayerControllerScript : MonoBehaviour
     {
         if (isGrounded == false)
         {
-            if (Input.GetKeyDown(KeyCode.Return))
+            if (Input.GetKeyDown(KeyCode.Return) || Input.GetButtonDown("B button"))
             {
                 if (anim.GetBool("walking") == true)
                 {

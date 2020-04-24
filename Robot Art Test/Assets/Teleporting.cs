@@ -10,9 +10,9 @@ public class Teleporting : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        //if (other.gameObject.CompareTag("Player"))
-        //{
+        if (other.gameObject.tag == "Player")
+        {
             thePlayer.transform.position = teleportTarget.transform.position;
-        //}
+        }
     }
 }

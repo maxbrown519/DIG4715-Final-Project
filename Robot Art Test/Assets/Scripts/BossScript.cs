@@ -35,8 +35,9 @@ public class BossScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.Find("Player Character");
         agent = GetComponent<NavMeshAgent>();
-        player = GameObject.Find("PLaayer");
+        player = GameObject.Find("Player Character");
         HP = 5;
     }
 
@@ -49,7 +50,7 @@ public class BossScript : MonoBehaviour
         }
         if (PlayerSpoted == true)
         {
-            player = GameObject.Find("PLaayer");
+            player = GameObject.Find("Player Character");
             PlayerTarget = player.transform;
             Vector3 lookVector = player.transform.position - transform.position;
             lookVector.y = Player.transform.position.y;
@@ -108,7 +109,7 @@ public class BossScript : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject.tag == "Player")
         {
             PlayerSpoted = true;
         }

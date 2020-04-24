@@ -25,7 +25,7 @@ public class BlockingHostile : MonoBehaviour
     {
         if (playerseen == true)
         {
-            Player = GameObject.Find("PLaayer");
+            Player = GameObject.FindGameObjectWithTag("Player");
             PlayerTarget = Player.transform;
             Vector3 lookVector = Player.transform.position - transform.position;
             //lookVector.y = Player.transform.position.y;

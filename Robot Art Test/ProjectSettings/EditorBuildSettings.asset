@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lose Screen.unity
     guid: 49739f855bb9ff24ea0544db151fa41f
+  - enabled: 1
+    path: Assets/Scenes/Compactor Scene.unity
+    guid: 4904a8c5e58d2af47a8f469097487001
+  - enabled: 1
+    path: Assets/Scenes/teleporting scene.unity
+    guid: 3eafb714119916e4ea1804007ed910c0
+  - enabled: 1
+    path: Assets/Scenes/ShootingLevel.unity
+    guid: 82c339d8953c1b24982c2c500b96fee8
   m_configObjects: {}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class teleporterForTesting : MonoBehaviour
 {
@@ -21,7 +22,38 @@ public class teleporterForTesting : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            player.transform.position = NextLocation.transform.position;
+            if (this.gameObject.tag == "teleportingLevel")
+            {
+                //load teleport level
+                SceneManager.LoadScene("teleporting Scene", LoadSceneMode.Single);
+            }
+            if (this.gameObject.tag == "comLevel")
+            {
+                //load compactor level
+                SceneManager.LoadScene("Compactor Scene", LoadSceneMode.Single);
+            }
+            if (this.gameObject.tag == "shootingLevel")
+            {
+                //load shooting level
+                SceneManager.LoadScene("ShootingLevel", LoadSceneMode.Single);
+
+            }
+            if (this.gameObject.tag == "telEnd")
+            {
+                //load hub
+                SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            }
+            if (this.gameObject.tag == "comEnd")
+            {
+                //load hub
+                SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            }
+            if (this.gameObject.tag == "ShootEnd")
+            {
+                //load hub
+                SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+            }
+            //player.transform.position = NextLocation.transform.position;
         }
     }
 }

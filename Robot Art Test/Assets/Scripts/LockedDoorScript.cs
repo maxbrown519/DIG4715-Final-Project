@@ -8,6 +8,7 @@ public class LockedDoorScript : MonoBehaviour
     public bool isOpened = false;
     public float speed;
     public float killTime;
+    public GameObject boss;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +18,20 @@ public class LockedDoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (lockTarget.GetComponent<TargetScript>().isLocked == false)
+        if (this.gameObject.tag == "Boss Door")
         {
-            transform.Translate(Vector3.right* speed * Time.deltaTime);
-            Destroy(this.gameObject, killTime);
+            if (boss.GetComponent<BossScript>().HP <= 0)
+            {
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
+                Destroy(this.gameObject);
+            }
+        }
+        else if(this.gameObject.tag != "Boss Door"){
+            if (lockTarget.GetComponent<TargetScript>().isLocked == false)
+            {
+                transform.Translate(Vector3.right * speed * Time.deltaTime);
+                Destroy(this.gameObject, killTime);
+            }
         }
     }
 }
