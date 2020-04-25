@@ -17,13 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Lose Screen.unity
     guid: 49739f855bb9ff24ea0544db151fa41f
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Assets/Scenes/ShootingLevel.unity
+    guid: 7a19c1de734fbc847ac33f909cd8a044
+  - enabled: 1
+    path: Assets/Scenes/TeleportingLevel.unity
+    guid: eca50556280c8d74fa9f0ac5be6c46c9
+  - enabled: 1
+    path: Assets/Scenes/AirDashLevel.unity
+    guid: 6b5257b4910667047b78145cac928c09
   m_configObjects: {}
