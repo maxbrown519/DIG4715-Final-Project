@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/TeleportingLevel.unity
+- path: Assets/Scenes/ShootingLevel.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
