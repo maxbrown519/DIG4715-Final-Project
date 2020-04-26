@@ -39,6 +39,7 @@ Transform:
   - {fileID: 287838384990122336}
   - {fileID: 2300445657226772356}
   - {fileID: 1603753584902434700}
+  - {fileID: 9011858234502292537}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
@@ -105,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d981f59b23983641ac918c4304567ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Options: {fileID: 8137386536559358277}
   speed: 10
   grav: -9.81
   JHeight: 20
@@ -136,6 +138,8 @@ MonoBehaviour:
   comL: 0
   comR: 0
   crushed: 0
+  BackToHub: {fileID: 0}
+  ThePlayer: {fileID: 0}
 --- !u!65 &8177332357765322664
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -594,6 +598,51 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!1 &8137386536559358277
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9011858234502292537}
+  - component: {fileID: 7049738766933478044}
+  m_Layer: 0
+  m_Name: Options
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9011858234502292537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137386536559358277}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1.0000002, y: 1, z: 1.0000002}
+  m_Children: []
+  m_Father: {fileID: 287838383126240532}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7049738766933478044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8137386536559358277}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebc3b96ef25dcae4ab7260804b72561f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Invincibility: 0
+  HardMode: 0
 --- !u!1001 &287838384489320448
 PrefabInstance:
   m_ObjectHideFlags: 0

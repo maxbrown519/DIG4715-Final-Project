@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControllerScript : MonoBehaviour
 {
+    public bool HardMode;
+    public bool Invincibility;
+    public GameObject options;
     // Start is called before the first frame update
     public float speed;
     Vector3 velocity;
@@ -48,6 +51,10 @@ public class PlayerControllerScript : MonoBehaviour
         anim = GetComponent<Animator>();
         health = 5;
         healthBar.SetMaxHealth(health);
+        if (options.GetComponent<Options>().HardMode == true)
+        {
+            health = 1;
+        }
     }
 
     // Update is called once per frame
@@ -221,6 +228,16 @@ public class PlayerControllerScript : MonoBehaviour
         }
     }
 
+    private void FixedUpdate()
+    {
+        if (options.GetComponent<Options>().Invincibility == true)
+        {
+            if (health < 5)
+            {
+                health = 5;
+            }
+        }
+    }
 
     //dash animation plays in the air
     void GetInput()
@@ -256,6 +273,5 @@ public class PlayerControllerScript : MonoBehaviour
         anim.SetInteger("condition", 0);
         anim.SetBool("dashing", false);
     }
-
 }
 

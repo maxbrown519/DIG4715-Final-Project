@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MouseLook.cs" />
     <Compile Include="Assets\Scripts\noPointer.cs" />
+    <Compile Include="Assets\Scripts\Options.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\PlayerControllerScript.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
