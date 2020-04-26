@@ -2,19 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[SerializeField]
+
 
 public class Options : MonoBehaviour
 {
-    [SerializeField]public bool Invincibility = false;
-    [SerializeField]public bool HardMode = false;
+    [SerializeField]public float Invincibility;
+    [SerializeField]public float HardMode;
+
+    public void Update()
+    {
+        
+    }
+
 
     public void InvincibilityMode()
     {
-        Invincibility = !Invincibility;
+        Invincibility = 1;
+
+    }
+    public void InvincibilityModeOff()
+    {
+        Invincibility = 0;
+
     }
     public void DifficultyMode()
     {
-        HardMode = !HardMode;
+        HardMode = 1;
+    }
+
+    public void DifficultyModeoff()
+    {
+        HardMode = 0;
     }
 }

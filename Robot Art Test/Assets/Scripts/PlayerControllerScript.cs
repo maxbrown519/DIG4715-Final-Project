@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerControllerScript : MonoBehaviour
 {
-    public bool HardMode;
-    public bool Invincibility;
+  
     public GameObject options;
     // Start is called before the first frame update
     public float speed;
@@ -51,7 +50,8 @@ public class PlayerControllerScript : MonoBehaviour
         anim = GetComponent<Animator>();
         health = 5;
         healthBar.SetMaxHealth(health);
-        if (options.GetComponent<Options>().HardMode == true)
+        options = GameObject.Find("gage");
+        if (options.GetComponent<dontdestrod>().HardMode == 1)
         {
             health = 1;
         }
@@ -230,7 +230,7 @@ public class PlayerControllerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (options.GetComponent<Options>().Invincibility == true)
+        if (options.GetComponent<dontdestrod>().Invincibility == 1)
         {
             if (health < 5)
             {
