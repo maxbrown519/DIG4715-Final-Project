@@ -5499,12 +5499,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To move, use the WASD keys or the right analog stick. To rotate the camera
+  m_text: To move, use the WASD keys or the left analog stick. To rotate the camera
     and character, move the mouse or right analog stick. To fire projectiles, click
-    the left mouse button or press the right trigger. To perform an air dash, press
-    the enter key or X button. To use teleporter gun, click the right mouse button
-    or press the left trigger. To jump, press the space key or A button and press
-    it again to perform a double jump.
+    the left mouse button or press the right bumper. To perform an air dash, press
+    the enter key or B button. To use teleporter gun, click the right mouse button
+    or press the left bumper. To jump, press the space key or A button and press it
+    again to perform a double jump.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5574,7 +5574,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1948568832}
-    characterCount: 426
+    characterCount: 423
     spriteCount: 0
     spaceCount: 80
     wordCount: 81

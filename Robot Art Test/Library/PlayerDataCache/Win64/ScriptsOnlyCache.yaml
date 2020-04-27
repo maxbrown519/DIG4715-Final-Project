@@ -1370,4 +1370,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Compactor Scene.unity
   - Assets/Scenes/ShootingLevel.unity
   - Assets/Scenes/teleporting scene.unity
-  playerPath: D:/Final Project/Robot Art Test.exe
+  playerPath: C:/Users/ajd21/OneDrive/Documents/GitHub/DIG4715-Final-Project/Robot
+    Art Test/FinalBuild/Robot Art Test.exe
