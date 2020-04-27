@@ -26,6 +26,7 @@ TagManager:
   - comEnd
   - ShootEnd
   - Boss Door
+  - win
   layers:
   - Default
   - TransparentFX

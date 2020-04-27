@@ -16,7 +16,10 @@ public class dontdestrod : MonoBehaviour
     private float ActiveHardMode;
     public GameObject VolSlider;
     public float Volume;
-    
+    public float level1;
+    public float level2;
+    public float level3;
+
     private void Awake()
     {
             DontDestroyOnLoad(this.gameObject);
@@ -24,7 +27,8 @@ public class dontdestrod : MonoBehaviour
         hardText = GameObject.Find("hard mode");
         HardModeText = hardText.GetComponent<Text>();
         invText = GameObject.Find("invinsability");
-        InvincibilityText = invText.GetComponent<Text>();
+
+        
     }
     private void LateUpdate()
     {
@@ -62,6 +66,9 @@ public class dontdestrod : MonoBehaviour
     public void ChangeVol()
     {
         Volume = GameObject.Find("Volume Slider").GetComponent<Slider>().value;
+    }
+    public void L1complete()
+    {
 
     }
 }

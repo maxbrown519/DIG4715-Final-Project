@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\teleproter.cs" />
     <Compile Include="Assets\Scripts\valueController.cs" />
     <Compile Include="Assets\Scripts\VolumeValueChange.cs" />
+    <Compile Include="Assets\Scripts\WinCheck.cs" />
     <Compile Include="Assets\Teleporting.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

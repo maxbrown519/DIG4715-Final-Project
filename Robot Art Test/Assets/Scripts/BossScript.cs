@@ -62,7 +62,8 @@ public class BossScript : MonoBehaviour
                 shoot();
             }
         }
-
+        if (HP > 0)
+        {
             if (T1 == false)
             {
                 agent.SetDestination(target.position);
@@ -79,6 +80,7 @@ public class BossScript : MonoBehaviour
             {
                 agent.SetDestination(target4.position);
             }
+        }
         
     }
     private void OnCollisionEnter(Collision other)
