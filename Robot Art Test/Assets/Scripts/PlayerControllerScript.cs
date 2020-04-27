@@ -162,7 +162,7 @@ public class PlayerControllerScript : MonoBehaviour
         }
 
         //animation movement
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetAxis("Vertical") > 0)
         {
             if (anim.GetBool("dashing") == true)
             {
