@@ -84,6 +84,7 @@
     <Compile Include="Assets\Scripts\pointer.cs" />
     <Compile Include="Assets\Scripts\pointerEnabled.cs" />
     <Compile Include="Assets\Scripts\projectileScript.cs" />
+    <Compile Include="Assets\Scripts\reset.cs" />
     <Compile Include="Assets\Scripts\ShootingHostileScript.cs" />
     <Compile Include="Assets\Scripts\TargetScript.cs" />
     <Compile Include="Assets\Scripts\teleporterForTesting.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="Assets\Scripts\valueController.cs" />
     <Compile Include="Assets\Scripts\VolumeValueChange.cs" />
     <Compile Include="Assets\Scripts\WinCheck.cs" />
+    <Compile Include="Assets\Scripts\wope.cs" />
     <Compile Include="Assets\Teleporting.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />

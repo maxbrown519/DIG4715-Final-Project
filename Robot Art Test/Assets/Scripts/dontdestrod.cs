@@ -19,6 +19,7 @@ public class dontdestrod : MonoBehaviour
     public float level1;
     public float level2;
     public float level3;
+    public bool sun = false;
 
     private void Awake()
     {
@@ -27,16 +28,34 @@ public class dontdestrod : MonoBehaviour
         hardText = GameObject.Find("hard mode");
         HardModeText = hardText.GetComponent<Text>();
         invText = GameObject.Find("invinsability");
-
-        
+       
     }
     private void LateUpdate()
     {
         ActiveInvincivility = Invincibility;
         ActiveHardMode = HardMode;
+       
     }
 
-    private void Update() { }
+    private void Update()
+    {
+        if (GameObject.Find("stuff") == null)
+        {
+            sun = false;
+        }
+
+        if (GameObject.Find("stuff") != null)
+        {
+            sun = true;
+        }
+
+        if (sun == true)
+        {
+            HardMode = GameObject.Find("stuff").GetComponent<wope>().HardMode;
+            Invincibility = GameObject.Find("stuff").GetComponent<wope>().Invincibility;
+        }
+       
+    }
    
 
     public void InvincibilityMode()
