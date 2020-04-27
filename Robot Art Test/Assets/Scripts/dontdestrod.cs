@@ -28,6 +28,7 @@ public class dontdestrod : MonoBehaviour
         hardText = GameObject.Find("hard mode");
         HardModeText = hardText.GetComponent<Text>();
         invText = GameObject.Find("invinsability");
+
        
     }
     private void LateUpdate()
@@ -61,8 +62,9 @@ public class dontdestrod : MonoBehaviour
     public void InvincibilityMode()
     {
         Invincibility = 1;
-        InvincibilityText.text = "Invincibility Mode Enabled";
+        InvincibilityText.text = "Invincibility Enabled";
         HardMode = 0;
+        HardModeText.text = "";
     }
     public void InvincibilityModeOff()
     {
@@ -74,6 +76,7 @@ public class dontdestrod : MonoBehaviour
         HardMode = 1;
         HardModeText.text = "Hard Mode Enabled";
         Invincibility = 0;
+        InvincibilityText.text = "";
     }
 
     public void DifficultyModeoff()

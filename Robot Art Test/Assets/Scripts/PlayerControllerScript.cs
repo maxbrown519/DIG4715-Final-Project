@@ -45,8 +45,11 @@ public class PlayerControllerScript : MonoBehaviour
     public Transform BackToHub;
     public GameObject ThePlayer;
 
+    private int CurrentScene;
+
     void Start()
     {
+        CurrentScene = SceneManager.GetActiveScene().buildIndex;
         anim = GetComponent<Animator>();
         health = 5;
         healthBar.SetMaxHealth(health);
@@ -158,7 +161,7 @@ public class PlayerControllerScript : MonoBehaviour
 
         if (health <= 0)
         {
-            SceneManager.LoadScene("Lose Screen"); //load end screen
+            SceneManager.LoadScene(CurrentScene);
         }
 
         //animation movement

@@ -1540,8 +1540,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdcd162b01a5639419e268bea2e114da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hardText: {fileID: 0}
+  invText: {fileID: 0}
   Invincibility: 0
   HardMode: 0
+  InvincibilityText: {fileID: 0}
+  HardModeText: {fileID: 0}
 --- !u!4 &1056819432
 Transform:
   m_ObjectHideFlags: 0
@@ -2473,6 +2477,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1804362142}
   - component: {fileID: 1804362141}
+  - component: {fileID: 1804362143}
   m_Layer: 0
   m_Name: BgMusic
   m_TagString: Untagged
@@ -2590,6 +2595,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1804362143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1804362140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2e67d18131e446c49ec80e54935b3b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSrc: {fileID: 1804362141}
+  musicVolume: 1
 --- !u!1001 &1985177778
 PrefabInstance:
   m_ObjectHideFlags: 0
