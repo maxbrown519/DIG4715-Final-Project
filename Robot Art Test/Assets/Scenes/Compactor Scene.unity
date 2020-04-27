@@ -2249,7 +2249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &532211822
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2520,7 +2520,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 219.5}
+  m_AnchoredPosition: {x: 0, y: 267.3}
   m_SizeDelta: {x: 1024, y: 66.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &572932999
@@ -2570,8 +2570,8 @@ MonoBehaviour:
   m_outlineColor:
     serializedVersion: 2
     rgba: 4278190080
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -3022,8 +3022,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 111.58}
-  m_SizeDelta: {x: 1024, y: 134.4}
+  m_AnchoredPosition: {x: 0, y: 149.3}
+  m_SizeDelta: {x: 1024, y: 199.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &719848333
 MonoBehaviour:
@@ -3043,10 +3043,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: To move, use the WASD keys. To rotate the camera, move the mouse. To fire
-    projectiles, click the left mouse button. To perform an air dash, press the enter
-    key. To use the glappling arm, click the right mouse button. To jump, press the
-    space key and press it again to perform a double jump.
+  m_text: To move, use the WASD keys or the right analog stick. To rotate the camera
+    and character, move the mouse or right analog stick. To fire projectiles, click
+    the left mouse button or press the right trigger. To perform an air dash, press
+    the enter key or X button. To use teleporter gun, click the right mouse button
+    or press the left trigger. To jump, press the space key or A button and press
+    it again to perform a double jump.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3116,12 +3118,12 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 719848333}
-    characterCount: 290
+    characterCount: 426
     spriteCount: 0
-    spaceCount: 54
-    wordCount: 55
+    spaceCount: 80
+    wordCount: 81
     linkCount: 0
-    lineCount: 4
+    lineCount: 6
     pageCount: 1
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
@@ -4275,8 +4277,8 @@ RectTransform:
   m_Father: {fileID: 69396299}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6729,7 +6731,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
