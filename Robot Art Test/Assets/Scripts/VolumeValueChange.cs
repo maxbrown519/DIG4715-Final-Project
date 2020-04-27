@@ -1,27 +1,33 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class VolumeValueChange : MonoBehaviour
 {
 
     // Reference to Audio Source component
-    private AudioSource audioSrc;
+    public AudioSource audioSrc;
 
     // Music volume variable that will be modified
     // by dragging slider knob
-    private float musicVolume = 1f;
+    public float musicVolume = 1f;
 
+    void Awake()
+    {
+        musicVolume = PlayerPrefs.GetFloat("Volume", musicVolume);
+    }
     // Use this for initialization
     void Start()
     {
-
         // Assign Audio Source component to control it
         audioSrc = GetComponent<AudioSource>();
+        musicVolume = PlayerPrefs.GetFloat("Volume", musicVolume);
     }
 
     // Update is called once per frame
     void Update()
     {
-
         // Setting volume option of Audio Source to be equal to musicVolume
         audioSrc.volume = musicVolume;
     }
@@ -32,5 +38,6 @@ public class VolumeValueChange : MonoBehaviour
     public void SetVolume(float vol)
     {
         musicVolume = vol;
+        PlayerPrefs.SetFloat("Volume", musicVolume);
     }
 }

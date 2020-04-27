@@ -327,6 +327,9 @@ MonoBehaviour:
   HardMode: 0
   VolSlider: {fileID: 0}
   Volume: 0
+  level1: 0
+  level2: 0
+  level3: 0
 --- !u!1 &108019823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3818,7 +3821,7 @@ GameObject:
   - component: {fileID: 1284289080}
   - component: {fileID: 1284289079}
   m_Layer: 0
-  m_Name: MenuMusic (Placeholder?)
+  m_Name: MenuMusicSource
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3836,6 +3839,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2e67d18131e446c49ec80e54935b3b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioSrc: {fileID: 1284289080}
+  musicVolume: 1
 --- !u!82 &1284289080
 AudioSource:
   m_ObjectHideFlags: 0
